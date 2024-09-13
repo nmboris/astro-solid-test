@@ -7,15 +7,16 @@ import GlobalLayout from "@/layouts/GlobalLayout.astro";
 
 <GlobalLayout>
 	<div class="flex h-screen">
-		<div class="m-auto flex flex-col jsutify-center">
-			<h1 class="text-4xl text-center my-6">Solid JS</h1>
+		<div class="m-auto flex flex-col justify-center max-w-[600px]">
+			<h1 class="text-5xl text-center mb-12 content-evenly">Just a simple counter with Vanilla JS, Solid JS and a nano store</h1>
+			<h2 class="text-4xl text-center my-6">Solid JS</h2>
 			<div class="flex justify-center">
 				<Counter class="text-center" startWith={6} client:load />
 			</div>
 
 			<hr class="my-4" />
 
-			<h1 class="text-4xl text-center my-6">Astro JS</h1>
+			<h2 class="text-4xl text-center my-6">Astro JS</h2>
 			<div class="flex justify-center text-2xl">Nanostore Counter is</div>
 			<div data-astro class="flex justify-center text-2xl"></div>
 		</div>	
