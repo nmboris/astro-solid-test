@@ -1,16 +1,37 @@
 ---
+import Counter from "@/components/solidjs/Counter";
+import GlobalLayout from "@/layouts/GlobalLayout.astro";
+
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<GlobalLayout>
+	<div class="flex h-screen">
+		<div class="m-auto flex flex-col jsutify-center">
+			<h1 class="text-4xl text-center my-6">Solid JS</h1>
+			<div class="flex justify-center">
+				<Counter class="text-center" startWith={6} client:load />
+			</div>
+
+			<hr class="my-4" />
+
+			<h1 class="text-4xl text-center my-6">Astro JS</h1>
+			<div class="flex justify-center text-2xl">Nanostore Counter is</div>
+			<div data-astro class="flex justify-center text-2xl"></div>
+		</div>	
+	</div>
+
+	<script>
+		import { counterValue as $counterValue } from '@/stores'
+		const valueDiv = document.querySelector('[data-astro]');
+
+		if(!valueDiv) {
+			throw new Error('No data-astro element found');
+		}
+
+		$counterValue.subscribe(theCounterValue => {
+		valueDiv.textContent = theCounterValue.toString();
+		});
+	</script>
+</GlobalLayout>
+	
