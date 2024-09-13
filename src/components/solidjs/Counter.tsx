@@ -1,4 +1,4 @@
-import { type Component, createSignal } from "solid-js";
+import { type Component } from "solid-js";
 import { useStore } from "@nanostores/solid";
 import { counterValue } from "@/stores";
 
