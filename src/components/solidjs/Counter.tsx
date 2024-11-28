@@ -18,10 +18,10 @@ const Counter: Component<Props> = (props) => {
 
     return (
         <div classList={{ [className!]: className !== null }}>
-            <div class="text-xl my-6">{$counterValue()}</div>
+            <div class="text-7xl font-bold my-6">{$counterValue()}</div>
 
             <button
-                class="h-10 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800"
+                class="h-10 px-5 m-2 text-neutral-100 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800"
                 onClick={() => counterValue.set($counterValue() + 1)}>
                 Increment via SolidJS
             </button>
